@@ -1,0 +1,276 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+@import "_bootstrap.min";
+
+$color-dark: #313844;
+$color-dark-2: #454C56;
+$color-white: #FFFFFF;
+$color-green: #7BBA52;
+$color-grey: #f3f2ed;
+$color-grey-2: #E1E0DB;
+
+.no-padding {
+	@media screen and (min-width: 768px) {
+		padding: 0;
+	}
+}
+img {
+	max-width: 100%;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #313844;
+	background-image: url("../../images/60-lines.png");
+	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.container {
+	@media screen and (min-width: 1300px) {
+		width: 1270px;
+	}
+}
+
+.sidebar {
+	background-color: rgba(255,255,255,.05);
+	min-height: 100vh;
+
+
+	@media screen and (min-width: 1200px) {
+		position: fixed;
+		width: 400px;
+	}
+
+	@media screen and (min-width: 1300px) {
+		width: 430px;
+	}
+
+	.inner {
+		padding: 1em 1.5em;
+	}
+
+	.title {
+		margin: 0 0 1em 0;
+		padding: 0 0 1em 0;
+		border-bottom: 1px solid rgba(255,255,255,.1);
+
+		h1 {
+			margin: 0;
+			color: $color-white;
+			font-size: 2em;
+		}
+		h2 {
+			font-size: 1.3em;
+			margin-top: .2em;
+			color: $color-grey;
+			text-transform: uppercase;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0 0 1em 0;
+
+			li {
+				margin-right: .5em;
+				display: inline-block;
+
+				a {
+					img {
+						width: 20px;
+						opacity: .8;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+					
+					&.btn {
+						background-color: $color-green;
+						color: $color-white;
+						padding: .2em .7em;
+						
+						&:hover {
+							background-color: $color-white;
+							color: $color-dark;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		border-bottom: 1px solid rgba(255,255,255,.1);
+		padding-bottom: .5em;
+
+		p {
+			color: $color-grey;
+		}
+	}
+
+	.skills {
+		h2 {
+			font-size: 1.3em;
+			text-transform: uppercase;
+			color: $color-grey;
+		}
+		tr {
+			td {
+				border: none;
+				padding-left: 0;
+				width: 33% !important;
+
+				span {
+					background-color: rgba(255,255,255,.1);
+					width: 100%;
+					color: $color-white;
+					border: 1px solid rgba(255,255,255,.2);
+					display: block;
+					text-align: center;
+					padding: .4em .3em;
+				}
+			}
+		}
+	}
+}
+
+.header {
+	margin-bottom: 1em;
+	background-color: rgba(255,255,255,.1);
+
+	nav {
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+
+				a {
+					padding: .5em 1.5em;
+					margin: 0;
+					display: block;
+					text-transform: uppercase;
+					font-weight: 400;
+					color: $color-grey;
+
+					&.active {
+						-webkit-box-shadow: inset 0px -1px 0px 0px rgba(209,209,209,1);
+						-moz-box-shadow: inset 0px -1px 0px 0px rgba(209,209,209,1);
+						box-shadow: inset 0px -1px 0px 0px rgba(209,209,209,1);
+					}
+					
+					&:hover {
+						background-color: rgba(255,255,255,.1);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main {
+	background-color: #E1E0DB;
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
+
+	h2 {
+		font-size: 1.5em;
+		text-transform: uppercase;
+		margin-top: 0;
+		color: #81807b;
+		margin-bottom: 1em;
+
+		img {
+			width: 1.1em;
+			margin-top: -.2em;
+			margin-right: .8em;
+		}
+	}
+
+	.portfolio-element {
+		background-color: #fff;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		margin-bottom: 1em;
+		position: relative;
+		
+
+		.item-title {
+			width: 100%;
+			height: 40px;
+			position: absolute;
+			bottom: -.1em;
+			left: 0;
+			background-color: rgba(255,255,255,.9);
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			transition:.5s;
+			text-align: center;
+
+			h3 {
+				margin: 0;
+				padding: .7em;
+				font-size: 1.2em;
+				position: absolute;
+				bottom: 0;
+				color: $color-dark-2;
+
+			}
+		}
+
+		&:hover {
+			.item-title {
+				display: block;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.testimonials {
+	background-color: #E1E0DB;
+	padding: 2em 1em 1em 1em;
+
+	h2 {
+		font-size: 1.5em;
+		text-transform: uppercase;
+		margin-top: 0;
+		color: #81807b;
+		margin-bottom: 1em;
+
+		img {
+			width: 1.1em;
+			margin-top: -.2em;
+			margin-right: .8em;
+		}
+	}
+
+	blockquote {
+		padding: 1em;
+		margin: 0 0 2em 0;
+		font-size: 1.05em;
+		border: none;
+		line-height: 1.7em;
+		background-color: #fff;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+
+		span {
+			margin-top: 1em;
+			display: block;
+			text-align: right;
+			color: #81807B;
+		}
+	}
+}
