@@ -9,6 +9,12 @@ $color-green: #7BBA52;
 $color-grey: #f3f2ed;
 $color-grey-2: #E1E0DB;
 
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
 .no-padding {
 	@media screen and (min-width: 768px) {
 		padding: 0;
@@ -58,9 +64,10 @@ body {
 			margin: 0;
 			color: $color-white;
 			font-size: 2em;
+
 		}
 		h2 {
-			font-size: 1.3em;
+			font-size: 1.1em;
 			margin-top: .2em;
 			color: $color-grey;
 			text-transform: uppercase;
@@ -89,6 +96,7 @@ body {
 						background-color: $color-green;
 						color: $color-white;
 						padding: .2em .7em;
+						@include border-radius(0px);
 						
 						&:hover {
 							background-color: $color-white;
@@ -271,6 +279,69 @@ body {
 			display: block;
 			text-align: right;
 			color: #81807B;
+		}
+	}
+}
+
+.page {
+	background-color: #E1E0DB;
+	padding: 1em 1em 1em 1em;
+
+	h2 {
+		font-size: 1.5em;
+		text-transform: uppercase;
+		margin-top: 0;
+		color: #81807b;
+		margin-bottom: 1em;
+
+		img {
+			width: 1.1em;
+			margin-top: -.2em;
+			margin-right: .8em;
+		}
+	}
+}
+
+.contact-page {
+	min-height: 100vh;
+
+	#gotcha {
+		display: none;
+	}
+
+	.form-container	{
+		.form-group {
+			margin-bottom: .3em;
+
+			label.control-label {
+				text-align: left;
+				text-transform: uppercase;
+				margin-bottom: .7em;
+				color: rgba(0,0,0,.6);
+			}
+
+			input {
+				background-color: #fff;
+				padding: 1.5em .7em;
+				@include border-radius(0px);
+			}
+
+			textarea {
+				width: 100%;
+				border: 1px solid rgba(0,0,0,.2);
+				padding: .7em;
+			}
+
+			.btn {
+				@include border-radius(0px);
+				padding: .7em 1.3em;
+			}
+		}
+		p {
+			border-top: 1px solid rgba(0,0,0,.1);
+			font-size: 1.1em;
+			margin-top: 1em;
+			padding-top: .4em;
 		}
 	}
 }

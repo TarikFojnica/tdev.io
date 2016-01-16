@@ -2489,7 +2489,7 @@ body {
       color: white;
       font-size: 2em; }
     .sidebar .title h2 {
-      font-size: 1.3em;
+      font-size: 1.1em;
       margin-top: .2em;
       color: #f3f2ed;
       text-transform: uppercase; }
@@ -2508,7 +2508,11 @@ body {
         .sidebar .title ul li a.btn {
           background-color: #7bba52;
           color: white;
-          padding: .2em .7em; }
+          padding: .2em .7em;
+          -webkit-border-radius: 0px;
+          border-radius: 0px;
+          background-clip: padding-box;
+          /* stops bg color from leaking outside the border: */ }
           .sidebar .title ul li a.btn:hover {
             background-color: white;
             color: #313844; }
@@ -2634,3 +2638,51 @@ body {
       display: block;
       text-align: right;
       color: #81807B; }
+
+.page {
+  background-color: #E1E0DB;
+  padding: 1em 1em 1em 1em; }
+  .page h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-top: 0;
+    color: #81807b;
+    margin-bottom: 1em; }
+    .page h2 img {
+      width: 1.1em;
+      margin-top: -.2em;
+      margin-right: .8em; }
+
+.contact-page {
+  min-height: 100vh; }
+  .contact-page #gotcha {
+    display: none; }
+  .contact-page .form-container .form-group {
+    margin-bottom: .3em; }
+    .contact-page .form-container .form-group label.control-label {
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: .7em;
+      color: rgba(0, 0, 0, 0.6); }
+    .contact-page .form-container .form-group input {
+      background-color: #fff;
+      padding: 1.5em .7em;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */ }
+    .contact-page .form-container .form-group textarea {
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: .7em; }
+    .contact-page .form-container .form-group .btn {
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */
+      padding: .7em 1.3em; }
+  .contact-page .form-container p {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    margin-top: 1em;
+    padding-top: .4em; }
