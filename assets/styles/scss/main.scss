@@ -9,11 +9,14 @@ $color-green: #7BBA52;
 $color-grey: #f3f2ed;
 $color-grey-2: #E1E0DB;
 
+$color-orange: #F16745;
+
 @mixin border-radius($radius) {
 	-webkit-border-radius: $radius;
 	border-radius: $radius;
 	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
+
 
 .no-padding {
 	@media screen and (min-width: 768px) {
@@ -29,6 +32,7 @@ body {
 	background-color: #313844;
 	background-image: url("../../images/60-lines.png");
 	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	font-family: 'Lato', sans-serif ;
 }
 
 .container {
@@ -79,13 +83,21 @@ body {
 			padding: 0 0 1em 0;
 
 			li {
-				margin-right: .5em;
+				margin-right: .1em;
 				display: inline-block;
+				background-color: $color-dark-2; 
+				
+				&:hover {
+					background-color: #6c727c;
+				}
 
 				a {
+
 					img {
-						width: 20px;
+						width: 27px;
+
 						opacity: .8;
+						padding: .3em;
 
 						&:hover {
 							opacity: 1;
@@ -97,6 +109,11 @@ body {
 						color: $color-white;
 						padding: .2em .7em;
 						@include border-radius(0px);
+
+						-o-transition:.2s;
+						-ms-transition:.2s;
+						-moz-transition:.2s;
+						-webkit-transition:.2s;
 						
 						&:hover {
 							background-color: $color-white;
@@ -133,10 +150,10 @@ body {
 					background-color: rgba(255,255,255,.1);
 					width: 100%;
 					color: $color-white;
-					border: 1px solid rgba(255,255,255,.2);
 					display: block;
 					text-align: center;
 					padding: .4em .3em;
+
 				}
 			}
 		}
@@ -151,7 +168,7 @@ body {
 		ul {
 			list-style-type: none;
 			padding: 0;
-			margin: 0;
+			margin: .5em;
 
 			li {
 				display: inline-block;
@@ -160,17 +177,20 @@ body {
 				text-align: center;
 
 				a {
-					padding: .5em 1.5em;
+					padding: .5em 1em;
 					margin: 0;
 					display: block;
 					text-transform: uppercase;
 					font-weight: 400;
 					color: $color-grey;
 
+					-o-transition:.1s;
+					-ms-transition:.1s;
+					-moz-transition:.1s;
+					-webkit-transition:.1s;
+
 					&.active {
-						-webkit-box-shadow: inset 0px -1px 0px 0px rgba(209,209,209,1);
-						-moz-box-shadow: inset 0px -1px 0px 0px rgba(209,209,209,1);
-						box-shadow: inset 0px -1px 0px 0px rgba(209,209,209,1);
+						background-color: #353B45;
 					}
 					
 					&:hover {
@@ -184,10 +204,7 @@ body {
 }
 
 .main {
-	background-color: #E1E0DB;
-	padding-right: 1em;
-	padding-left: 1em;
-	padding-top: 1em;
+	background-color: #ECF0F1;
 
 	h2 {
 		font-size: 1.5em;
@@ -195,6 +212,8 @@ body {
 		margin-top: 0;
 		color: #81807b;
 		margin-bottom: 1em;
+		border-bottom: 1px solid rgba(0,0,0,.05);
+		padding-bottom: .5em;
 
 		img {
 			width: 1.1em;
@@ -202,7 +221,32 @@ body {
 			margin-right: .8em;
 		}
 	}
+}
 
+.intro {
+	background: url("../../images/intro-bg.jpg") center center no-repeat;
+	border: 1px solid $color-dark-2;
+	padding: 6em 2em;
+	text-align: center;
+	
+	h2 {
+		text-transform: none;
+		border: none;
+		margin: 0;
+		color: $color-grey;
+		font-size: 1.8em;
+	}
+
+	p {
+		color: $color-grey-2;
+		font-size: 1.2em;
+	}
+}
+
+.portfolio {
+	padding-right: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
 	.portfolio-element {
 		background-color: #fff;
 		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
@@ -219,10 +263,6 @@ body {
 			bottom: -.1em;
 			left: 0;
 			background-color: rgba(255,255,255,.9);
-			-ms-transition:.5s;
-			-moz-transition:.5s;
-			-webkit-transition:.5s;
-			transition:.5s;
 			text-align: center;
 
 			h3 {
@@ -232,37 +272,120 @@ body {
 				position: absolute;
 				bottom: 0;
 				color: $color-dark-2;
-
 			}
 		}
 
 		&:hover {
 			.item-title {
 				display: block;
-				opacity: 1;
 			}
 		}
+	}
+
+	figure.portfolio-item {
+		font-family: 'Raleway', Arial, sans-serif;
+		position: relative;
+		float: left;
+		overflow: hidden;
+		margin: 10px 1%;
+		width: 31%;
+		height: 230px;
+		color: #000000;
+		text-align: center;
+		-webkit-perspective: 50em;
+		perspective: 50em;
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+	}
+	figure.portfolio-item * {
+		-webkit-box-sizing: padding-box;
+		box-sizing: padding-box;
+		-webkit-transition: all 0.2s ease-out;
+		transition: all 0.2s ease-out;
+	}
+	figure.portfolio-item img {
+		max-width: 100%;
+		vertical-align: top;
+	}
+	figure.portfolio-item figcaption {
+		top: 50%;
+		left: 20px;
+		right: 20px;
+		position: absolute;
+		opacity: 0;
+		z-index: 1;
+	}
+	figure.portfolio-item h2,
+	figure.portfolio-item h4 {
+		margin: 0;
+	}
+	figure.portfolio-item h2 {
+		font-weight: 400;
+		color: $color-dark-2;
+		font-size: 1.1em;
+	}
+	figure.portfolio-item h4 {
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	figure.portfolio-item i {
+		font-size: 32px;
+	}
+
+	figure.portfolio-item {
+		figcaption {
+			img {
+				width: 2em;
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	figure.portfolio-item:after {
+		background-color: $color-grey;
+		position: absolute;
+		content: "";
+		display: block;
+		top: 20px;
+		left: 20px;
+		right: 20px;
+		bottom: 20px;
+		-webkit-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+		-webkit-transform: rotateX(-90deg);
+		transform: rotateX(-90deg);
+		-webkit-transform-origin: 50% 50%;
+		-ms-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		opacity: 0;
+	}
+	figure.portfolio-item a {
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		z-index: 1;
+	}
+	figure.portfolio-item:hover figcaption,
+	figure.portfolio-item.hover figcaption {
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		opacity: 1;
+		-webkit-transition-delay: 0.2s;
+		transition-delay: 0.2s;
+	}
+	figure.portfolio-item:hover:after,
+	figure.portfolio-item.hover:after {
+		-webkit-transform: rotateX(0);
+		transform: rotateX(0);
+		opacity: 0.8;
 	}
 }
 
 .testimonials {
-	background-color: #E1E0DB;
 	padding: 2em 1em 1em 1em;
-
-	h2 {
-		font-size: 1.5em;
-		text-transform: uppercase;
-		margin-top: 0;
-		color: #81807b;
-		margin-bottom: 1em;
-
-		img {
-			width: 1.1em;
-			margin-top: -.2em;
-			margin-right: .8em;
-		}
-	}
-
 	blockquote {
 		padding: 1em;
 		margin: 0 0 2em 0;
@@ -284,7 +407,7 @@ body {
 }
 
 .page {
-	background-color: #E1E0DB;
+	background-color: #ECF0F1;
 	padding: 1em 1em 1em 1em;
 
 	h2 {
@@ -305,6 +428,7 @@ body {
 .contact-page {
 	min-height: 100vh;
 
+
 	#gotcha {
 		display: none;
 	}
@@ -322,13 +446,14 @@ body {
 
 			input {
 				background-color: #fff;
+				border: 2px solid rgb(220, 228, 236);
 				padding: 1.5em .7em;
 				@include border-radius(0px);
 			}
 
 			textarea {
 				width: 100%;
-				border: 1px solid rgba(0,0,0,.2);
+				border: 2px solid rgb(220, 228, 236);
 				padding: .7em;
 			}
 
@@ -343,5 +468,89 @@ body {
 			margin-top: 1em;
 			padding-top: .4em;
 		}
+	}
+}
+
+.modal {
+	padding: 0 !important;
+	margin: 0;
+
+	.modal-dialog {
+		width: 1280px;
+		max-width: 100%;
+		margin-top: 0;
+	}
+
+	.modal-content {
+		@include border-radius(0px);
+	}
+	
+	.modal-header {
+		background-color: $color-dark-2;
+		padding: .7em;
+		border:none;
+
+		button.btn {
+			background-color: $color-orange;
+			color: $color-white;
+			@include border-radius(0);
+
+			img {
+				width: 1em;
+				margin-top: -.1em;
+			}
+		}
+	}
+
+	.modal-body {
+		background-color: $color-dark;
+
+		.img-container {
+			//-webkit-box-shadow: -5px 5px 0px 0px rgba(69,76,86,1);
+			//-moz-box-shadow: -5px 5px 0px 0px rgba(69,76,86,1);
+			//box-shadow: -5px 5px 0px 0px rgba(69,76,86,1);
+		}
+
+		.desc {
+			margin-top: 1em;
+
+			ul {
+				padding: 0 0 1em 0;
+				margin: 0 0 1em 0;
+				list-style-type: none;
+				font-family: 'Oxygen', sans-serif;
+				border-bottom: 1px solid rgba($color-grey-2, .1);
+
+
+				li {
+					&.key {
+						text-transform: uppercase;
+						color: $color-grey;
+						margin-bottom: .3em;
+					}
+
+					&.value {
+						font-size: 1.1em;
+						color: rgba($color-grey, .8);
+
+						span {
+							border: 1px solid $color-dark-2;
+							padding: .3em .6em;
+							display: inline-block;
+							margin-bottom: .3em;
+						}
+
+						a {
+							color: $color-orange;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.modal-footer {
+		background-color: $color-dark;
+		border: none;
 	}
 }

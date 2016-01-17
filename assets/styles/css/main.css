@@ -2462,7 +2462,8 @@ body {
   min-height: 100vh;
   background-color: #313844;
   background-image: url("../../images/60-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  font-family: "Lato", sans-serif; }
 
 @media screen and (min-width: 1300px) {
   .container {
@@ -2498,11 +2499,15 @@ body {
       margin: 0;
       padding: 0 0 1em 0; }
       .sidebar .title ul li {
-        margin-right: .5em;
-        display: inline-block; }
+        margin-right: .1em;
+        display: inline-block;
+        background-color: #454c56; }
+        .sidebar .title ul li:hover {
+          background-color: #6c727c; }
         .sidebar .title ul li a img {
-          width: 20px;
-          opacity: .8; }
+          width: 27px;
+          opacity: .8;
+          padding: .3em; }
           .sidebar .title ul li a img:hover {
             opacity: 1; }
         .sidebar .title ul li a.btn {
@@ -2512,7 +2517,11 @@ body {
           -webkit-border-radius: 0px;
           border-radius: 0px;
           background-clip: padding-box;
-          /* stops bg color from leaking outside the border: */ }
+          /* stops bg color from leaking outside the border: */
+          -o-transition: .2s;
+          -ms-transition: .2s;
+          -moz-transition: .2s;
+          -webkit-transition: .2s; }
           .sidebar .title ul li a.btn:hover {
             background-color: white;
             color: #313844; }
@@ -2533,7 +2542,6 @@ body {
       background-color: rgba(255, 255, 255, 0.1);
       width: 100%;
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
       display: block;
       text-align: center;
       padding: .4em .3em; }
@@ -2544,85 +2552,171 @@ body {
   .header nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0; }
+    margin: .5em; }
     .header nav ul li {
       display: inline-block;
       margin: 0;
       padding: 0;
       text-align: center; }
       .header nav ul li a {
-        padding: .5em 1.5em;
+        padding: .5em 1em;
         margin: 0;
         display: block;
         text-transform: uppercase;
         font-weight: 400;
-        color: #f3f2ed; }
+        color: #f3f2ed;
+        -o-transition: .1s;
+        -ms-transition: .1s;
+        -moz-transition: .1s;
+        -webkit-transition: .1s; }
         .header nav ul li a.active {
-          -webkit-box-shadow: inset 0px -1px 0px 0px #d1d1d1;
-          -moz-box-shadow: inset 0px -1px 0px 0px #d1d1d1;
-          box-shadow: inset 0px -1px 0px 0px #d1d1d1; }
+          background-color: #353B45; }
         .header nav ul li a:hover {
           background-color: rgba(255, 255, 255, 0.1);
           text-decoration: none; }
 
 .main {
-  background-color: #E1E0DB;
-  padding-right: 1em;
-  padding-left: 1em;
-  padding-top: 1em; }
+  background-color: #ECF0F1; }
   .main h2 {
     font-size: 1.5em;
     text-transform: uppercase;
     margin-top: 0;
     color: #81807b;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: .5em; }
     .main h2 img {
       width: 1.1em;
       margin-top: -.2em;
       margin-right: .8em; }
-  .main .portfolio-element {
+
+.intro {
+  background: url("../../images/intro-bg.jpg") center center no-repeat;
+  border: 1px solid #454c56;
+  padding: 6em 2em;
+  text-align: center; }
+  .intro h2 {
+    text-transform: none;
+    border: none;
+    margin: 0;
+    color: #f3f2ed;
+    font-size: 1.8em; }
+  .intro p {
+    color: #e1e0db;
+    font-size: 1.2em; }
+
+.portfolio {
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em; }
+  .portfolio .portfolio-element {
     background-color: #fff;
     -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     margin-bottom: 1em;
     position: relative; }
-    .main .portfolio-element .item-title {
+    .portfolio .portfolio-element .item-title {
       width: 100%;
       height: 40px;
       position: absolute;
       bottom: -.1em;
       left: 0;
       background-color: rgba(255, 255, 255, 0.9);
-      -ms-transition: .5s;
-      -moz-transition: .5s;
-      -webkit-transition: .5s;
-      transition: .5s;
       text-align: center; }
-      .main .portfolio-element .item-title h3 {
+      .portfolio .portfolio-element .item-title h3 {
         margin: 0;
         padding: .7em;
         font-size: 1.2em;
         position: absolute;
         bottom: 0;
         color: #454c56; }
-    .main .portfolio-element:hover .item-title {
-      display: block;
-      opacity: 1; }
+    .portfolio .portfolio-element:hover .item-title {
+      display: block; }
+  .portfolio figure.portfolio-item {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    width: 31%;
+    height: 230px;
+    color: #000000;
+    text-align: center;
+    -webkit-perspective: 50em;
+    perspective: 50em;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2); }
+  .portfolio figure.portfolio-item * {
+    -webkit-box-sizing: padding-box;
+    box-sizing: padding-box;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; }
+  .portfolio figure.portfolio-item img {
+    max-width: 100%;
+    vertical-align: top; }
+  .portfolio figure.portfolio-item figcaption {
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1; }
+  .portfolio figure.portfolio-item h2,
+  .portfolio figure.portfolio-item h4 {
+    margin: 0; }
+  .portfolio figure.portfolio-item h2 {
+    font-weight: 400;
+    color: #454c56;
+    font-size: 1.1em; }
+  .portfolio figure.portfolio-item h4 {
+    font-weight: 400;
+    text-transform: uppercase; }
+  .portfolio figure.portfolio-item i {
+    font-size: 32px; }
+  .portfolio figure.portfolio-item figcaption img {
+    width: 2em;
+    margin-bottom: 1em; }
+  .portfolio figure.portfolio-item:after {
+    background-color: #f3f2ed;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0; }
+  .portfolio figure.portfolio-item a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1; }
+  .portfolio figure.portfolio-item:hover figcaption,
+  .portfolio figure.portfolio-item.hover figcaption {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s; }
+  .portfolio figure.portfolio-item:hover:after,
+  .portfolio figure.portfolio-item.hover:after {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 0.8; }
 
 .testimonials {
-  background-color: #E1E0DB;
   padding: 2em 1em 1em 1em; }
-  .testimonials h2 {
-    font-size: 1.5em;
-    text-transform: uppercase;
-    margin-top: 0;
-    color: #81807b;
-    margin-bottom: 1em; }
-    .testimonials h2 img {
-      width: 1.1em;
-      margin-top: -.2em;
-      margin-right: .8em; }
   .testimonials blockquote {
     padding: 1em;
     margin: 0 0 2em 0;
@@ -2640,7 +2734,7 @@ body {
       color: #81807B; }
 
 .page {
-  background-color: #E1E0DB;
+  background-color: #ECF0F1;
   padding: 1em 1em 1em 1em; }
   .page h2 {
     font-size: 1.5em;
@@ -2666,6 +2760,7 @@ body {
       color: rgba(0, 0, 0, 0.6); }
     .contact-page .form-container .form-group input {
       background-color: #fff;
+      border: 2px solid #dce4ec;
       padding: 1.5em .7em;
       -webkit-border-radius: 0px;
       border-radius: 0px;
@@ -2673,7 +2768,7 @@ body {
       /* stops bg color from leaking outside the border: */ }
     .contact-page .form-container .form-group textarea {
       width: 100%;
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      border: 2px solid #dce4ec;
       padding: .7em; }
     .contact-page .form-container .form-group .btn {
       -webkit-border-radius: 0px;
@@ -2686,3 +2781,57 @@ body {
     font-size: 1.1em;
     margin-top: 1em;
     padding-top: .4em; }
+
+.modal {
+  padding: 0 !important;
+  margin: 0; }
+  .modal .modal-dialog {
+    width: 1280px;
+    max-width: 100%;
+    margin-top: 0; }
+  .modal .modal-content {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */ }
+  .modal .modal-header {
+    background-color: #454c56;
+    padding: .7em;
+    border: none; }
+    .modal .modal-header button.btn {
+      background-color: #f16745;
+      color: white;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */ }
+      .modal .modal-header button.btn img {
+        width: 1em;
+        margin-top: -.1em; }
+  .modal .modal-body {
+    background-color: #313844; }
+    .modal .modal-body .desc {
+      margin-top: 1em; }
+      .modal .modal-body .desc ul {
+        padding: 0 0 1em 0;
+        margin: 0 0 1em 0;
+        list-style-type: none;
+        font-family: 'Oxygen', sans-serif;
+        border-bottom: 1px solid rgba(225, 224, 219, 0.1); }
+        .modal .modal-body .desc ul li.key {
+          text-transform: uppercase;
+          color: #f3f2ed;
+          margin-bottom: .3em; }
+        .modal .modal-body .desc ul li.value {
+          font-size: 1.1em;
+          color: rgba(243, 242, 237, 0.8); }
+          .modal .modal-body .desc ul li.value span {
+            border: 1px solid #454c56;
+            padding: .3em .6em;
+            display: inline-block;
+            margin-bottom: .3em; }
+          .modal .modal-body .desc ul li.value a {
+            color: #f16745; }
+  .modal .modal-footer {
+    background-color: #313844;
+    border: none; }
