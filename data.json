@@ -1,0 +1,25 @@
+[
+  {
+    "name":"MarketCrown",
+    "imageUrl":"<img src='assets/images/full-mc.jpg'>",
+    "description": "Design and API implementation of the MarketCrown - forecast stock movement in multiple world markets.",
+    "technologies": "<span>Angular</span> <span>Javascript</span> <span>jQuery</span> <span>HTML</span> <span>CSS(SASS)</span> <span>Photoshop</span>",
+    "previewLink": "<a href='https://tdev.aerobatic.io/_projects/maretcrown/'>MarketCrown</a>"
+  },
+
+  {
+    "name":"HashWallet",
+    "imageUrl":"<img src='assets/images/full-hw.jpg'>",
+    "description": "Design and development of the HashWallet,  popular way to buy, sell, and use bitcoin",
+    "technologies": "<span>Angular</span>",
+    "previewLink": "<a href='https://tdev.aerobatic.io/_projects/hash-wallet/'>HashWallet</a>"
+  },
+
+  {
+    "name":"Phone Check Pro",
+    "imageUrl":"<img src='assets/images/full-pcp.jpg'>",
+    "description": "Design and development of PhoneCheckPro, service for discovering telecommunication data and phone owners' info",
+    "technologies": "<span>HTML</span> <span>CSS(SCSS)</span> <span>Google Maps API</span> <span>Photoshop</span>",
+    "previewLink": "<a href='https://tdev.aerobatic.io/_projects/phonecheckpro/'>PhoneCheckPro</a>"
+  }
+]

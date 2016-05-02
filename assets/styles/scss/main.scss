@@ -31,7 +31,6 @@ body {
 	min-height: 100vh;
 	background-color: #313844;
 	background-image: url("../../images/60-lines.png");
-	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 	font-family: 'Lato', sans-serif ;
 }
 
@@ -85,8 +84,8 @@ body {
 			li {
 				margin-right: .1em;
 				display: inline-block;
-				background-color: $color-dark-2; 
-				
+				background-color: $color-dark-2;
+
 				&:hover {
 					background-color: #6c727c;
 				}
@@ -103,7 +102,7 @@ body {
 							opacity: 1;
 						}
 					}
-					
+
 					&.btn {
 						background-color: $color-green;
 						color: $color-white;
@@ -114,7 +113,7 @@ body {
 						-ms-transition:.2s;
 						-moz-transition:.2s;
 						-webkit-transition:.2s;
-						
+
 						&:hover {
 							background-color: $color-white;
 							color: $color-dark;
@@ -192,7 +191,7 @@ body {
 					&.active {
 						background-color: #353B45;
 					}
-					
+
 					&:hover {
 						background-color: rgba(255,255,255,.1);
 						text-decoration: none;
@@ -228,7 +227,7 @@ body {
 	border: 1px solid $color-dark-2;
 	padding: 6em 2em;
 	text-align: center;
-	
+
 	h2 {
 		text-transform: none;
 		border: none;
@@ -254,7 +253,7 @@ body {
 		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
 		margin-bottom: 1em;
 		position: relative;
-		
+
 
 		.item-title {
 			width: 100%;
@@ -343,7 +342,7 @@ body {
 	}
 
 	figure.portfolio-item:after {
-		background-color: $color-grey;
+		background-color: #fff;
 		position: absolute;
 		content: "";
 		display: block;
@@ -359,6 +358,7 @@ body {
 		-ms-transform-origin: 50% 50%;
 		transform-origin: 50% 50%;
 		opacity: 0;
+		border: 1px solid #fff;
 	}
 	figure.portfolio-item a {
 		left: 0;
@@ -471,6 +471,15 @@ body {
 	}
 }
 
+.modal.fade .modal-dialog {
+	-webkit-transform: translate(0, -0%);
+	-ms-transform: translate(0, -0%);
+	transform: translate(0, -0%);
+	-webkit-transition: -webkit-transform 0.5s ease-out;
+	-moz-transition: -moz-transform 0.5s ease-out;
+	-o-transition: -o-transform 0.5s ease-out;
+	transition: transform 0.5s ease-out;
+}
 .modal {
 	padding: 0 !important;
 	margin: 0;
@@ -484,7 +493,7 @@ body {
 	.modal-content {
 		@include border-radius(0px);
 	}
-	
+
 	.modal-header {
 		background-color: $color-dark-2;
 		padding: .7em;
@@ -535,7 +544,7 @@ body {
 
 						span {
 							border: 1px solid $color-dark-2;
-							padding: .3em .6em;
+							padding: .3em .7em;
 							display: inline-block;
 							margin-bottom: .3em;
 						}
@@ -552,5 +561,18 @@ body {
 	.modal-footer {
 		background-color: $color-dark;
 		border: none;
+	}
+}
+
+.showcase {
+	text-align: center;
+	padding-top: 50px;
+
+	.element {
+		margin-bottom: 50px;
+
+		img {
+			border: 1px solid rgba(255,255,255,.2);
+		}
 	}
 }

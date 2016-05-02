@@ -3,6 +3,8 @@
 <head>
 	<link rel="stylesheet" href="./assets/styles/css/main.css">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<title>Tarik Fojnica | Web Design and Development</title>
 </head>
 <body>
@@ -33,15 +35,19 @@
 
 							<ul>
 								<li>
-									<a href="#"><img src="assets/images/contact.png" title="Ask for a quote." alt="Ask for a quote."></a>
+									<a href="contact.html"><img src="assets/images/contact.png" title="Ask for a quote." alt="Ask for a quote."></a>
 								</li>
 
 								<li>
-									<a href="#"><img src="assets/images/twitter.png" title="Follow me on Twitter." alt="Follow me on Twitter."></a>
+									<a href="https://twitter.com/TarikFojnica"><img src="assets/images/twitter.png" title="Follow me on Twitter." alt="Follow me on Twitter."></a>
 								</li>
 
 								<li>
-									<a href="#"><img src="assets/images/linkedin.png" title="Check my LinkedIn profile." alt="Check my LinkedIn Profile"></a>
+									<a href="https://www.linkedin.com/in/tarikfojnica"><img src="assets/images/linkedin.png" title="Check my LinkedIn profile." alt="Check my LinkedIn Profile"></a>
+								</li>
+
+								<li>
+									<a href="https://github.com/TarikFojnica"><img src="assets/images/github.png" title="Check my GitHub profile." alt="Check my GitHub Profile"></a>
 								</li>
 
 								<li>
@@ -63,21 +69,21 @@
 							<table class="table">
 								<tbody>
 								<tr>
-									<td><span>HTML5</span></td>
-									<td><span>CSS3</span></td>
-									<td><span>Javascript</span></td>
+									<td><span class="html">HTML5</span></td>
+									<td><span class="css">CSS3 (SCSS)</span></td>
+									<td><span class="js">Javascript</span></td>
 								</tr>
 
 								<tr>
-									<td><span>Angular</span></td>
-									<td><span>NodeJS</span></td>
-									<td><span>Express</span></td>
+									<td><span class="angular">Angular</span></td>
+									<td><span class="nodejs">NodeJS</span></td>
+									<td><span class="express">Express</span></td>
 								</tr>
 
 								<tr>
-									<td><span>MongoDB</span></td>
-									<td><span>jQuery</span></td>
-									<td><span>Photoshop</span></td>
+									<td><span class="mongodb">MongoDB</span></td>
+									<td><span class="jquery">jQuery</span></td>
+									<td><span class="photoshop">Photoshop</span></td>
 								</tr>
 								</tbody>
 							</table>
@@ -88,88 +94,50 @@
 
 			<div class="col-lg-8 no-padding">
 
-				<div class="main">
-					<h2><img src="assets/images/works.png" alt="">Featured Work</h2>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="portfolio-element">
-								<a href="#">
-									<img src="assets/images/market-crown-dashboard.jpg" alt="">
-									<span class="item-title">
-										<h3>MarketCrown Design and API Implementation</h3>
-									</span>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-md-6">
-							<div class="portfolio-element">
-								<a href="#">
-									<img src="assets/images/hash-wallet.jpg" alt="">
-									<span class="item-title">
-										<h3>HashWallet Design & Coding</h3>
-									</span>
-								</a>
-							</div>
-						</div>
-					</div>
+				<div class="page contact-page">
+					<h2><img src="assets/images/contact-dark.png" alt="">Contact</h2>
 
 					<div class="row">
-						<div class="col-md-6">
-							<div class="portfolio-element">
-								<a href="#">
-									<img src="assets/images/phone-check-pro.jpg" alt="">
-									<span class="item-title">
-										<h3>PhoneCheckPro Design & Coding</h3>
-									</span>
-								</a>
-							</div>
-						</div>
+						<div class="col-md-12">
+							<div class="form-container">
+								<form class="form-horizontal" action="//formspree.io/tarik.f786@gmail.com" method="POST">
+									<fieldset>
+										<div class="form-group">
+											<label for="inputEmail" class="col-lg-12 control-label">Email</label>
+											<div class="col-lg-12">
+												<input required type="email" name="_replyto" class="form-control" id="inputEmail" placeholder="Enter your email">
+											</div>
+										</div>
 
-						<div class="col-md-6">
-							<div class="portfolio-element">
-								<a href="#">
-									<img src="assets/images/vin-check-up.jpg" alt="">
-									<span class="item-title">
-										<h3>VinCheckUp Design & Coding</h3>
-									</span>
-								</a>
+										<div class="form-group">
+											<label for="inputName" class="col-lg-12 control-label">Name</label>
+											<div class="col-lg-12">
+												<input required type="text" name="name" class="form-control" id="inputName" placeholder="Enter your name">
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="inputName" class="col-lg-12 control-label">Message</label>
+											<div class="col-lg-12">
+												<textarea required rows="4" name="content" placeholder="Enter your message"></textarea>
+											</div>
+										</div>
+
+										<input id="gotcha" type="text" name="_gotcha">
+
+										<div class="form-group">
+											<div class="col-lg-12">
+												<button class="btn btn-success" type="submit">Submit</button>
+											</div>
+										</div>
+									</fieldset>
+								</form>
+								<p>Remember, you can always <a href="#">Tweet</a> me, or send a direct email to tarik.f786[at]gmail.com</p>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="testimonials">
-					<h2><img src="assets/images/testimonials.png" alt="">Testimonials</h2>
-
-					<div class="row">
-						<div class="col-lg-12">
-							<blockquote cite="https://www.linkedin.com/in/tarikfojnica">
-								Tarik truly is a rare find in the software development profession. He possesses the technical expertise and interpersonal skills that are hard to find in a developer. While working with Tarik I could always depend on him no matter what the task and I always enjoyed speaking with him about on going development issues. I recommend Tarik to anyone looking for a great web developer with an eye for design!
-
-								<span>Josh Fischer, Software Engineering Consultant</span>
-							</blockquote>
-
-							<blockquote cite="https://www.linkedin.com/in/tarikfojnica">
-								Tarik, is a high level developer. We threw tasks at him and he was able to complete on time and add to the overall scope to ensure we over achieved on the projects. He is a rare developer with stellar communication skills and leadership qualities.
-
-								<span>Timothy Roberts, HashingSpace CEO</span>
-							</blockquote>
-
-							<blockquote cite="https://www.linkedin.com/in/tarikfojnica">
-								Tarik is by far one of the best freelancers I have found on Elance. I would 100% strongly recommend him to anyone needing his services. English is great, always seemed to be available when we needed him, and most importantly he stuck with us with excellent professionalism through all of our (many) revisions! His number 1 goal was to make sure we got exactly where we wanted to be. Once again this freelancer is A++ quality.
-
-								<span>Eric T, Mill Work Market</span>
-							</blockquote>
-
-							<blockquote cite="https://www.linkedin.com/in/tarikfojnica">
-								It was a pleasure working with such a committed and profound person. Every request was thoughtfully and quickly adopted, therefore I gladly reccomend Tarik to all potential clients who seeks for a great professional
-
-								<span>Dejan C, LedMedia</span>
-							</blockquote>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

@@ -231,7 +231,7 @@ td, th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: 'Oxygen', sans-serif;
@@ -2312,7 +2312,6 @@ tbody.collapse.in {
 
 @-ms-viewport {
   width: device-width; }
-
 .visible-xs, .visible-sm, .visible-md, .visible-lg {
   display: none !important; }
 
@@ -2462,7 +2461,6 @@ body {
   min-height: 100vh;
   background-color: #313844;
   background-image: url("../../images/60-lines.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   font-family: "Lato", sans-serif; }
 
 @media screen and (min-width: 1300px) {
@@ -2487,7 +2485,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     .sidebar .title h1 {
       margin: 0;
-      color: white;
+      color: #FFFFFF;
       font-size: 2em; }
     .sidebar .title h2 {
       font-size: 1.1em;
@@ -2501,7 +2499,7 @@ body {
       .sidebar .title ul li {
         margin-right: .1em;
         display: inline-block;
-        background-color: #454c56; }
+        background-color: #454C56; }
         .sidebar .title ul li:hover {
           background-color: #6c727c; }
         .sidebar .title ul li a img {
@@ -2511,8 +2509,8 @@ body {
           .sidebar .title ul li a img:hover {
             opacity: 1; }
         .sidebar .title ul li a.btn {
-          background-color: #7bba52;
-          color: white;
+          background-color: #7BBA52;
+          color: #FFFFFF;
           padding: .2em .7em;
           -webkit-border-radius: 0px;
           border-radius: 0px;
@@ -2523,7 +2521,7 @@ body {
           -moz-transition: .2s;
           -webkit-transition: .2s; }
           .sidebar .title ul li a.btn:hover {
-            background-color: white;
+            background-color: #FFFFFF;
             color: #313844; }
   .sidebar .content {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -2541,7 +2539,7 @@ body {
     .sidebar .skills tr td span {
       background-color: rgba(255, 255, 255, 0.1);
       width: 100%;
-      color: white;
+      color: #FFFFFF;
       display: block;
       text-align: center;
       padding: .4em .3em; }
@@ -2592,7 +2590,7 @@ body {
 
 .intro {
   background: url("../../images/intro-bg.jpg") center center no-repeat;
-  border: 1px solid #454c56;
+  border: 1px solid #454C56;
   padding: 6em 2em;
   text-align: center; }
   .intro h2 {
@@ -2602,7 +2600,7 @@ body {
     color: #f3f2ed;
     font-size: 1.8em; }
   .intro p {
-    color: #e1e0db;
+    color: #E1E0DB;
     font-size: 1.2em; }
 
 .portfolio {
@@ -2630,7 +2628,7 @@ body {
         font-size: 1.2em;
         position: absolute;
         bottom: 0;
-        color: #454c56; }
+        color: #454C56; }
     .portfolio .portfolio-element:hover .item-title {
       display: block; }
   .portfolio figure.portfolio-item {
@@ -2668,7 +2666,7 @@ body {
     margin: 0; }
   .portfolio figure.portfolio-item h2 {
     font-weight: 400;
-    color: #454c56;
+    color: #454C56;
     font-size: 1.1em; }
   .portfolio figure.portfolio-item h4 {
     font-weight: 400;
@@ -2679,7 +2677,7 @@ body {
     width: 2em;
     margin-bottom: 1em; }
   .portfolio figure.portfolio-item:after {
-    background-color: #f3f2ed;
+    background-color: #fff;
     position: absolute;
     content: "";
     display: block;
@@ -2694,7 +2692,8 @@ body {
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    opacity: 0; }
+    opacity: 0;
+    border: 1px solid #fff; }
   .portfolio figure.portfolio-item a {
     left: 0;
     right: 0;
@@ -2782,6 +2781,15 @@ body {
     margin-top: 1em;
     padding-top: .4em; }
 
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0, 0%);
+  -ms-transform: translate(0, 0%);
+  transform: translate(0, 0%);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  -moz-transition: -moz-transform 0.5s ease-out;
+  -o-transition: -o-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out; }
+
 .modal {
   padding: 0 !important;
   margin: 0; }
@@ -2795,12 +2803,12 @@ body {
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
   .modal .modal-header {
-    background-color: #454c56;
+    background-color: #454C56;
     padding: .7em;
     border: none; }
     .modal .modal-header button.btn {
-      background-color: #f16745;
-      color: white;
+      background-color: #F16745;
+      color: #FFFFFF;
       -webkit-border-radius: 0;
       border-radius: 0;
       background-clip: padding-box;
@@ -2826,12 +2834,22 @@ body {
           font-size: 1.1em;
           color: rgba(243, 242, 237, 0.8); }
           .modal .modal-body .desc ul li.value span {
-            border: 1px solid #454c56;
-            padding: .3em .6em;
+            border: 1px solid #454C56;
+            padding: .3em .7em;
             display: inline-block;
             margin-bottom: .3em; }
           .modal .modal-body .desc ul li.value a {
-            color: #f16745; }
+            color: #F16745; }
   .modal .modal-footer {
     background-color: #313844;
     border: none; }
+
+.showcase {
+  text-align: center;
+  padding-top: 50px; }
+  .showcase .element {
+    margin-bottom: 50px; }
+    .showcase .element img {
+      border: 1px solid rgba(255, 255, 255, 0.2); }
+
+/*# sourceMappingURL=main.css.map */
