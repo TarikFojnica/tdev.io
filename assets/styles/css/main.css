@@ -2468,12 +2468,12 @@ body {
     width: 1270px; } }
 
 .sidebar {
-  background-color: rgba(255, 255, 255, 0.05);
-  min-height: 100vh; }
+  background-color: rgba(255, 255, 255, 0.05); }
   @media screen and (min-width: 1200px) {
     .sidebar {
       position: fixed;
-      width: 400px; } }
+      width: 400px;
+      min-height: 100vh; } }
   @media screen and (min-width: 1300px) {
     .sidebar {
       width: 430px; } }
@@ -2646,6 +2646,16 @@ body {
     -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2); }
+    @media screen and (max-width: 991px) {
+      .portfolio figure.portfolio-item {
+        height: auto; } }
+    @media screen and (max-width: 768px) {
+      .portfolio figure.portfolio-item {
+        width: 90%;
+        float: none;
+        display: block;
+        margin-right: auto;
+        margin-left: auto; } }
   .portfolio figure.portfolio-item * {
     -webkit-box-sizing: padding-box;
     box-sizing: padding-box;
