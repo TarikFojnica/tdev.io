@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 @import "_bootstrap.min";
 
@@ -46,7 +46,7 @@ body {
 	@media screen and (min-width: 1200px) {
 		position: fixed;
 		width: 400px;
-		min-height: 100vh;
+		height: 100vh;
 	}
 
 	@media screen and (min-width: 1300px) {
@@ -55,6 +55,8 @@ body {
 
 	.inner {
 		padding: 1em 1.5em;
+		height: auto;
+		overflow: auto;
 	}
 
 	.title {
@@ -156,6 +158,43 @@ body {
 			}
 		}
 	}
+	
+	.skillset {
+		h2 {
+			font-size: 1.3em;
+			text-transform: uppercase;
+			color: $color-grey;
+		}
+
+		ul {
+			padding: 0;
+			list-style-type: none;
+			margin: 0;
+			color: #fff;
+
+			li {
+				padding: .4em 0;
+				border-bottom: 1px solid rgba(255,255,255,.05);
+				position: relative;
+				display: block;
+				width: 50%;
+				float: left;
+
+				i {
+					position: absolute;
+					right: 10px;
+					top: 8px;
+					color: greenyellow;
+				}
+
+				&.knows-about {
+					i {
+						color: rgba(255,255,255,.8);
+					}
+				}
+			}
+		}
+	}
 }
 
 .header {
@@ -222,22 +261,52 @@ body {
 }
 
 .intro {
-	background: url("../../images/intro-bg.jpg") center center no-repeat;
+	background:#313844 url("../../images/intro-bg.jpg") center center no-repeat;
 	border: 1px solid $color-dark-2;
-	padding: 6em 2em;
-	text-align: center;
+	padding: 2em 1em;
 
 	h2 {
 		text-transform: none;
 		border: none;
-		margin: 0;
+		margin: 0 0 1em 0;
 		color: $color-grey;
-		font-size: 1.8em;
+		font-size: 1.4em;
 	}
 
-	p {
-		color: $color-grey-2;
-		font-size: 1.2em;
+	.job-element {
+		border: 1px solid rgba(255,255,255,.1);
+		text-align: left;
+		padding: 1em;
+		margin-bottom: 1em;
+
+		h3 {
+			font-size: 1.3em;
+			font-weight: 400;
+		}
+
+		.where {
+			h3 {
+				color: rgba(255,255,255,.7);
+				margin: 0;
+
+				small {
+					display: block;
+					margin-top: .5em;
+				}
+			}
+		}
+
+		.what {
+			h3 {
+				color: rgba(255,255,255,.9);
+				margin: 0;
+			}
+
+			p {
+				margin-top: .5em;
+				color: rgba(255,255,255,.9);
+			}
+		}
 	}
 }
 
@@ -286,7 +355,7 @@ body {
 		float: left;
 		overflow: hidden;
 		margin: 10px 1%;
-		width: 31%;
+		width: 48%;
 		height: 230px;
 		color: #000000;
 		text-align: center;
@@ -295,6 +364,10 @@ body {
 		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
 		-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
 		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+
+		&:hover {
+			cursor: pointer;
+		}
 
 		@media screen and (max-width: 991px) {
 			height: auto;

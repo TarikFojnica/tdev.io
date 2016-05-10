@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -2473,12 +2473,14 @@ body {
     .sidebar {
       position: fixed;
       width: 400px;
-      min-height: 100vh; } }
+      height: 100vh; } }
   @media screen and (min-width: 1300px) {
     .sidebar {
       width: 430px; } }
   .sidebar .inner {
-    padding: 1em 1.5em; }
+    padding: 1em 1.5em;
+    height: auto;
+    overflow: auto; }
   .sidebar .title {
     margin: 0 0 1em 0;
     padding: 0 0 1em 0;
@@ -2543,6 +2545,29 @@ body {
       display: block;
       text-align: center;
       padding: .4em .3em; }
+  .sidebar .skillset h2 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: #f3f2ed; }
+  .sidebar .skillset ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    color: #fff; }
+    .sidebar .skillset ul li {
+      padding: .4em 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      display: block;
+      width: 50%;
+      float: left; }
+      .sidebar .skillset ul li i {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        color: greenyellow; }
+      .sidebar .skillset ul li.knows-about i {
+        color: rgba(255, 255, 255, 0.8); }
 
 .header {
   margin-bottom: 1em;
@@ -2589,19 +2614,35 @@ body {
       margin-right: .8em; }
 
 .intro {
-  background: url("../../images/intro-bg.jpg") center center no-repeat;
+  background: #313844 url("../../images/intro-bg.jpg") center center no-repeat;
   border: 1px solid #454C56;
-  padding: 6em 2em;
-  text-align: center; }
+  padding: 2em 1em; }
   .intro h2 {
     text-transform: none;
     border: none;
-    margin: 0;
+    margin: 0 0 1em 0;
     color: #f3f2ed;
-    font-size: 1.8em; }
-  .intro p {
-    color: #E1E0DB;
-    font-size: 1.2em; }
+    font-size: 1.4em; }
+  .intro .job-element {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    padding: 1em;
+    margin-bottom: 1em; }
+    .intro .job-element h3 {
+      font-size: 1.3em;
+      font-weight: 400; }
+    .intro .job-element .where h3 {
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0; }
+      .intro .job-element .where h3 small {
+        display: block;
+        margin-top: .5em; }
+    .intro .job-element .what h3 {
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0; }
+    .intro .job-element .what p {
+      margin-top: .5em;
+      color: rgba(255, 255, 255, 0.9); }
 
 .portfolio {
   padding-right: 1em;
@@ -2637,7 +2678,7 @@ body {
     float: left;
     overflow: hidden;
     margin: 10px 1%;
-    width: 31%;
+    width: 48%;
     height: 230px;
     color: #000000;
     text-align: center;
@@ -2646,6 +2687,8 @@ body {
     -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2); }
+    .portfolio figure.portfolio-item:hover {
+      cursor: pointer; }
     @media screen and (max-width: 991px) {
       .portfolio figure.portfolio-item {
         height: auto; } }

@@ -4,7 +4,7 @@
     "imageUrl":"<img src='assets/images/full-mc.jpg'>",
     "description": "Design and API implementation of the MarketCrown - forecast stock movement in multiple world markets.",
     "technologies": "<span>Angular</span> <span>Javascript</span> <span>jQuery</span> <span>HTML</span> <span>CSS(SASS)</span> <span>Photoshop</span>",
-    "previewLink": "<a href='https://tdev.aerobatic.io/_projects/maretcrown/'>MarketCrown</a>"
+    "previewLink": "<a href='http://tesigndev.com/marketcrown.html'>MarketCrown</a>"
   },
 
   {
@@ -20,6 +20,14 @@
     "imageUrl":"<img src='assets/images/full-pcp.jpg'>",
     "description": "Design and development of PhoneCheckPro, service for discovering telecommunication data and phone owners' info",
     "technologies": "<span>HTML</span> <span>CSS(SCSS)</span> <span>Google Maps API</span> <span>Photoshop</span>",
-    "previewLink": "<a href='https://tdev.aerobatic.io/_projects/phonecheckpro/'>PhoneCheckPro</a>"
+    "previewLink": "<a href='http://phonecheckpro.com'>PhoneCheckPro</a>"
+  },
+
+  {
+    "name":"Virtuous Network",
+    "imageUrl":"<img src='assets/images/full-vn.jpg'>",
+    "description": "Design and development for the VirtousNetwork Youtube network",
+    "technologies": "<span>HTML</span> <span>CSS(SCSS)</span><span>Photoshop</span>",
+    "previewLink": "<a href='https://virtuousnetwork.club/'>VirtuousNetwork</a>"
   }
 ]
