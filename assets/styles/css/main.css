@@ -2450,6 +2450,16 @@ tbody.collapse.in {
 @media print {
   .hidden-print {
     display: none !important; } }
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0; }
+
+.smooth-hover {
+  -o-transition: .3s;
+  -ms-transition: .3s;
+  -moz-transition: .3s;
+  -webkit-transition: .3s; }
+
 @media screen and (min-width: 768px) {
   .no-padding {
     padding: 0; } }
@@ -2459,40 +2469,51 @@ img {
 
 body {
   min-height: 100vh;
-  background-color: #313844;
-  background-image: url("../../images/60-lines.png");
+  background-image: -webkit-linear-gradient(left, #efe2d1 0%, #f5bb87 100%);
+  background-image: -o-linear-gradient(left, #efe2d1 0%, #f5bb87 100%);
+  background-image: linear-gradient(to right, #efe2d1 0%, #f5bb87 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEFE2D1', endColorstr='#FFF5BB87', GradientType=1);
   font-family: "Lato", sans-serif; }
+
+.wrapper {
+  background: url("../../images/texture.png") repeat fixed; }
 
 @media screen and (min-width: 1300px) {
   .container {
     width: 1270px; } }
 
 .sidebar {
-  background-color: rgba(255, 255, 255, 0.05); }
+  background-color: rgba(255, 255, 255, 0.3); }
   @media screen and (min-width: 1200px) {
     .sidebar {
       position: fixed;
-      width: 400px;
+      width: 380px;
       height: 100vh; } }
   @media screen and (min-width: 1300px) {
     .sidebar {
-      width: 430px; } }
+      width: 414px; } }
   .sidebar .inner {
     padding: 1em 1.5em;
     height: auto;
     overflow: auto; }
+  .sidebar .img {
+    -webkit-border-radius: 300px;
+    border-radius: 300px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+    overflow: hidden; }
   .sidebar .title {
-    margin: 0 0 1em 0;
-    padding: 0 0 1em 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    margin: 0 0 1em 0; }
     .sidebar .title h1 {
       margin: 0;
-      color: #FFFFFF;
-      font-size: 2em; }
+      color: #f48081;
+      font-size: 2em;
+      font-weight: 600; }
     .sidebar .title h2 {
       font-size: 1.1em;
       margin-top: .2em;
-      color: #f3f2ed;
+      color: #008e9c;
       text-transform: uppercase; }
     .sidebar .title ul {
       list-style-type: none;
@@ -2501,9 +2522,9 @@ body {
       .sidebar .title ul li {
         margin-right: .1em;
         display: inline-block;
-        background-color: #454C56; }
+        background-color: rgba(255, 255, 255, 0.1); }
         .sidebar .title ul li:hover {
-          background-color: #6c727c; }
+          background-color: rgba(255, 255, 255, 0.3); }
         .sidebar .title ul li a img {
           width: 27px;
           opacity: .8;
@@ -2523,37 +2544,25 @@ body {
           -moz-transition: .2s;
           -webkit-transition: .2s; }
           .sidebar .title ul li a.btn:hover {
-            background-color: #FFFFFF;
-            color: #313844; }
+            background-color: #f48081;
+            color: #FFFFFF; }
   .sidebar .content {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: .5em; }
+    border-top: 1px solid #f48081;
+    border-bottom: 1px solid #f48081;
+    padding-bottom: .5em;
+    padding-top: .5em; }
     .sidebar .content p {
-      color: #f3f2ed; }
-  .sidebar .skills h2 {
-    font-size: 1.3em;
-    text-transform: uppercase;
-    color: #f3f2ed; }
-  .sidebar .skills tr td {
-    border: none;
-    padding-left: 0;
-    width: 33% !important; }
-    .sidebar .skills tr td span {
-      background-color: rgba(255, 255, 255, 0.1);
-      width: 100%;
-      color: #FFFFFF;
-      display: block;
-      text-align: center;
-      padding: .4em .3em; }
+      color: #1e1e1e; }
   .sidebar .skillset h2 {
     font-size: 1.3em;
     text-transform: uppercase;
-    color: #f3f2ed; }
+    color: #008e9c;
+    font-weight: 600; }
   .sidebar .skillset ul {
     padding: 0;
     list-style-type: none;
     margin: 0;
-    color: #fff; }
+    color: #1e1e1e; }
     .sidebar .skillset ul li {
       padding: .4em 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -2565,13 +2574,13 @@ body {
         position: absolute;
         right: 10px;
         top: 8px;
-        color: greenyellow; }
+        color: #008e9c; }
       .sidebar .skillset ul li.knows-about i {
-        color: rgba(255, 255, 255, 0.8); }
+        color: rgba(0, 142, 156, 0.5); }
 
 .header {
   margin-bottom: 1em;
-  background-color: rgba(255, 255, 255, 0.1); }
+  background-color: rgba(255, 255, 255, 0.3); }
   .header nav ul {
     list-style-type: none;
     padding: 0;
@@ -2587,19 +2596,20 @@ body {
         display: block;
         text-transform: uppercase;
         font-weight: 400;
-        color: #f3f2ed;
+        color: #1e1e1e;
         -o-transition: .1s;
         -ms-transition: .1s;
         -moz-transition: .1s;
         -webkit-transition: .1s; }
         .header nav ul li a.active {
-          background-color: #353B45; }
+          background-color: #f48081;
+          color: #fff; }
         .header nav ul li a:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-          text-decoration: none; }
+          background-color: #f48081;
+          color: #fff; }
 
 .main {
-  background-color: #ECF0F1; }
+  background-color: rgba(255, 255, 255, 0.3); }
   .main h2 {
     font-size: 1.5em;
     text-transform: uppercase;
@@ -2614,40 +2624,47 @@ body {
       margin-right: .8em; }
 
 .intro {
-  background: #313844 url("../../images/intro-bg.jpg") center center no-repeat;
-  border: 1px solid #454C56;
   padding: 2em 1em; }
   .intro h2 {
     text-transform: none;
     border: none;
-    margin: 0 0 1em 0;
-    color: #f3f2ed;
-    font-size: 1.4em; }
+    margin: 0 0 .5em 0;
+    color: #008e9c;
+    font-size: 1.8em;
+    font-weight: 600; }
   .intro .job-element {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     text-align: left;
     padding: 1em;
     margin-bottom: 1em; }
     .intro .job-element h3 {
       font-size: 1.3em;
-      font-weight: 400; }
+      font-weight: 400;
+      color: #008e9c; }
     .intro .job-element .where h3 {
-      color: rgba(255, 255, 255, 0.7);
+      color: #1e1e1e;
       margin: 0; }
       .intro .job-element .where h3 small {
         display: block;
         margin-top: .5em; }
     .intro .job-element .what h3 {
-      color: rgba(255, 255, 255, 0.9);
+      color: #008e9c;
       margin: 0; }
     .intro .job-element .what p {
       margin-top: .5em;
       color: rgba(255, 255, 255, 0.9); }
 
 .portfolio {
-  padding-right: 1em;
-  padding-left: 1em;
-  padding-top: 1em; }
+  padding: 1em 1em 0 1em;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 10px; }
+  .portfolio h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    color: #008e9c; }
   .portfolio .portfolio-element {
     background-color: #fff;
     -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
@@ -2677,7 +2694,7 @@ body {
     position: relative;
     float: left;
     overflow: hidden;
-    margin: 10px 1%;
+    margin: 10px 2% 10px 0;
     width: 48%;
     height: 230px;
     color: #000000;
@@ -2768,32 +2785,39 @@ body {
     opacity: 0.8; }
 
 .testimonials {
-  padding: 2em 1em 1em 1em; }
+  padding: 1em 1em 0 1em;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 10px; }
+  .testimonials h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    color: #008e9c; }
   .testimonials blockquote {
     padding: 1em;
     margin: 0 0 2em 0;
     font-size: 1.05em;
     border: none;
     line-height: 1.7em;
-    background-color: #fff;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2); }
+    background-color: rgba(255, 255, 255, 0.3); }
     .testimonials blockquote span {
       margin-top: 1em;
       display: block;
       text-align: right;
-      color: #81807B; }
+      color: #008e9c; }
 
 .page {
-  background-color: #ECF0F1;
-  padding: 1em 1em 1em 1em; }
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 1em; }
   .page h2 {
-    font-size: 1.5em;
     text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: .5em;
     margin-top: 0;
-    color: #81807b;
-    margin-bottom: 1em; }
+    color: #008e9c; }
     .page h2 img {
       width: 1.1em;
       margin-top: -.2em;
@@ -2812,7 +2836,7 @@ body {
       color: rgba(0, 0, 0, 0.6); }
     .contact-page .form-container .form-group input {
       background-color: #fff;
-      border: 2px solid #dce4ec;
+      border: none;
       padding: 1.5em .7em;
       -webkit-border-radius: 0px;
       border-radius: 0px;
@@ -2820,14 +2844,14 @@ body {
       /* stops bg color from leaking outside the border: */ }
     .contact-page .form-container .form-group textarea {
       width: 100%;
-      border: 2px solid #dce4ec;
+      border: none;
       padding: .7em; }
     .contact-page .form-container .form-group .btn {
-      -webkit-border-radius: 0px;
-      border-radius: 0px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
       background-clip: padding-box;
       /* stops bg color from leaking outside the border: */
-      padding: .7em 1.3em; }
+      padding: .5em 2em; }
   .contact-page .form-container p {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 1.1em;
@@ -2856,7 +2880,7 @@ body {
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */ }
   .modal .modal-header {
-    background-color: #454C56;
+    background-color: #F5E2CD;
     padding: .7em;
     border: none; }
     .modal .modal-header button.btn {
@@ -2870,7 +2894,7 @@ body {
         width: 1em;
         margin-top: -.1em; }
   .modal .modal-body {
-    background-color: #313844; }
+    background-color: #F5E2CD; }
     .modal .modal-body .desc {
       margin-top: 1em; }
       .modal .modal-body .desc ul {
@@ -2881,18 +2905,19 @@ body {
         border-bottom: 1px solid rgba(225, 224, 219, 0.1); }
         .modal .modal-body .desc ul li.key {
           text-transform: uppercase;
-          color: #f3f2ed;
-          margin-bottom: .3em; }
+          color: #008e9c;
+          margin-bottom: .3em;
+          font-weight: 600; }
         .modal .modal-body .desc ul li.value {
           font-size: 1.1em;
-          color: rgba(243, 242, 237, 0.8); }
+          color: rgba(0, 0, 0, 0.8); }
           .modal .modal-body .desc ul li.value span {
-            border: 1px solid #454C56;
+            border: 1px solid #008e9c;
             padding: .3em .7em;
             display: inline-block;
             margin-bottom: .3em; }
           .modal .modal-body .desc ul li.value a {
-            color: #F16745; }
+            color: #f48081; }
   .modal .modal-footer {
     background-color: #313844;
     border: none; }

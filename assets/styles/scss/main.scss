@@ -1,12 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 @import "_bootstrap.min";
+@import "mixins";
+
+$color-light: rgba(255,255,255,.1);
+$color-light-2: rgba(255,255,255,.3);
+
+$color-grey: rgba(0,0,0,.4);
+$color-primary: #f48081;
+$color-primary-dark: #1e1e1e;
+$color-secondary: #008e9c;
+
 
 $color-dark: #313844;
 $color-dark-2: #454C56;
 $color-white: #FFFFFF;
 $color-green: #7BBA52;
-$color-grey: #f3f2ed;
 $color-grey-2: #E1E0DB;
 
 $color-orange: #F16745;
@@ -16,7 +25,6 @@ $color-orange: #F16745;
 	border-radius: $radius;
 	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
-
 
 .no-padding {
 	@media screen and (min-width: 768px) {
@@ -29,9 +37,12 @@ img {
 
 body {
 	min-height: 100vh;
-	background-color: #313844;
-	background-image: url("../../images/60-lines.png");
+	@include gradient-horizontal(#efe2d1, #f5bb87);
 	font-family: 'Lato', sans-serif ;
+}
+
+.wrapper {
+	background: url("../../images/texture.png") repeat fixed;
 }
 
 .container {
@@ -41,16 +52,16 @@ body {
 }
 
 .sidebar {
-	background-color: rgba(255,255,255,.05);
+	background-color: $color-light-2;
 
 	@media screen and (min-width: 1200px) {
 		position: fixed;
-		width: 400px;
+		width: 380px;
 		height: 100vh;
 	}
 
 	@media screen and (min-width: 1300px) {
-		width: 430px;
+		width: 414px;
 	}
 
 	.inner {
@@ -59,21 +70,25 @@ body {
 		overflow: auto;
 	}
 
+	.img {
+		@include border-radius(300px);
+		overflow: hidden;
+	}
+
 	.title {
 		margin: 0 0 1em 0;
-		padding: 0 0 1em 0;
-		border-bottom: 1px solid rgba(255,255,255,.1);
 
 		h1 {
 			margin: 0;
-			color: $color-white;
+			color: $color-primary;
 			font-size: 2em;
+			font-weight: 600;
 
 		}
 		h2 {
 			font-size: 1.1em;
 			margin-top: .2em;
-			color: $color-grey;
+			color: $color-secondary;
 			text-transform: uppercase;
 		}
 
@@ -85,10 +100,10 @@ body {
 			li {
 				margin-right: .1em;
 				display: inline-block;
-				background-color: $color-dark-2;
+				background-color: $color-light;
 
 				&:hover {
-					background-color: #6c727c;
+					background-color: $color-light-2;
 				}
 
 				a {
@@ -116,8 +131,8 @@ body {
 						-webkit-transition:.2s;
 
 						&:hover {
-							background-color: $color-white;
-							color: $color-dark;
+							background-color: $color-primary;
+							color: $color-white;
 						}
 					}
 				}
@@ -126,36 +141,13 @@ body {
 	}
 
 	.content {
-		border-bottom: 1px solid rgba(255,255,255,.1);
+		border-top: 1px solid $color-primary;
+		border-bottom: 1px solid $color-primary;
 		padding-bottom: .5em;
+		padding-top: .5em;
 
 		p {
-			color: $color-grey;
-		}
-	}
-
-	.skills {
-		h2 {
-			font-size: 1.3em;
-			text-transform: uppercase;
-			color: $color-grey;
-		}
-		tr {
-			td {
-				border: none;
-				padding-left: 0;
-				width: 33% !important;
-
-				span {
-					background-color: rgba(255,255,255,.1);
-					width: 100%;
-					color: $color-white;
-					display: block;
-					text-align: center;
-					padding: .4em .3em;
-
-				}
-			}
+			color: $color-primary-dark;
 		}
 	}
 	
@@ -163,14 +155,15 @@ body {
 		h2 {
 			font-size: 1.3em;
 			text-transform: uppercase;
-			color: $color-grey;
+			color: $color-secondary;
+			font-weight: 600;
 		}
 
 		ul {
 			padding: 0;
 			list-style-type: none;
 			margin: 0;
-			color: #fff;
+			color: $color-primary-dark;
 
 			li {
 				padding: .4em 0;
@@ -184,12 +177,12 @@ body {
 					position: absolute;
 					right: 10px;
 					top: 8px;
-					color: greenyellow;
+					color: $color-secondary;
 				}
 
 				&.knows-about {
 					i {
-						color: rgba(255,255,255,.8);
+						color: rgba($color-secondary,.5);
 					}
 				}
 			}
@@ -199,7 +192,7 @@ body {
 
 .header {
 	margin-bottom: 1em;
-	background-color: rgba(255,255,255,.1);
+	background-color: $color-light-2;
 
 	nav {
 		ul {
@@ -219,7 +212,7 @@ body {
 					display: block;
 					text-transform: uppercase;
 					font-weight: 400;
-					color: $color-grey;
+					color: $color-primary-dark;
 
 					-o-transition:.1s;
 					-ms-transition:.1s;
@@ -227,12 +220,13 @@ body {
 					-webkit-transition:.1s;
 
 					&.active {
-						background-color: #353B45;
+						background-color: $color-primary;
+						color: #fff;
 					}
 
 					&:hover {
-						background-color: rgba(255,255,255,.1);
-						text-decoration: none;
+						background-color: $color-primary;
+						color: #fff;
 					}
 				}
 			}
@@ -241,8 +235,7 @@ body {
 }
 
 .main {
-	background-color: #ECF0F1;
-
+	background-color: $color-light-2;
 	h2 {
 		font-size: 1.5em;
 		text-transform: uppercase;
@@ -261,20 +254,19 @@ body {
 }
 
 .intro {
-	background:#313844 url("../../images/intro-bg.jpg") center center no-repeat;
-	border: 1px solid $color-dark-2;
 	padding: 2em 1em;
 
 	h2 {
 		text-transform: none;
 		border: none;
-		margin: 0 0 1em 0;
-		color: $color-grey;
-		font-size: 1.4em;
+		margin: 0 0 .5em 0;
+		color: $color-secondary;
+		font-size: 1.8em;
+		font-weight: 600;
 	}
 
 	.job-element {
-		border: 1px solid rgba(255,255,255,.1);
+		background-color: $color-light-2;;
 		text-align: left;
 		padding: 1em;
 		margin-bottom: 1em;
@@ -282,11 +274,12 @@ body {
 		h3 {
 			font-size: 1.3em;
 			font-weight: 400;
+			color: $color-secondary;
 		}
 
 		.where {
 			h3 {
-				color: rgba(255,255,255,.7);
+				color: $color-primary-dark;
 				margin: 0;
 
 				small {
@@ -298,7 +291,7 @@ body {
 
 		.what {
 			h3 {
-				color: rgba(255,255,255,.9);
+				color: $color-secondary;
 				margin: 0;
 			}
 
@@ -311,9 +304,19 @@ body {
 }
 
 .portfolio {
-	padding-right: 1em;
-	padding-left: 1em;
-	padding-top: 1em;
+	padding: 1em 1em 0 1em;
+	background-color: $color-light-2;
+	margin-top: 10px;
+
+	h2 {
+		margin: 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 1.5em;
+		margin-bottom: .5em;
+		color: $color-secondary;
+	}
+
 	.portfolio-element {
 		background-color: #fff;
 		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
@@ -354,7 +357,7 @@ body {
 		position: relative;
 		float: left;
 		overflow: hidden;
-		margin: 10px 1%;
+		margin: 10px 2% 10px 0;
 		width: 48%;
 		height: 230px;
 		color: #000000;
@@ -470,37 +473,47 @@ body {
 }
 
 .testimonials {
-	padding: 2em 1em 1em 1em;
+	padding: 1em 1em 0 1em;
+	background-color: $color-light-2;
+	margin-top: 10px;
+
+	h2 {
+		margin: 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 1.5em;
+		margin-bottom: .5em;
+		color: $color-secondary;
+	}
+
 	blockquote {
 		padding: 1em;
 		margin: 0 0 2em 0;
 		font-size: 1.05em;
 		border: none;
 		line-height: 1.7em;
-		background-color: #fff;
-		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
-		-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
-		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+		background-color: $color-light-2;
 
 		span {
 			margin-top: 1em;
 			display: block;
 			text-align: right;
-			color: #81807B;
+			color: $color-secondary;
 		}
 	}
 }
 
 .page {
-	background-color: #ECF0F1;
-	padding: 1em 1em 1em 1em;
+	background-color: $color-light-2;
+	padding: 1em;
 
 	h2 {
-		font-size: 1.5em;
 		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 1.5em;
+		margin-bottom: .5em;
 		margin-top: 0;
-		color: #81807b;
-		margin-bottom: 1em;
+		color: $color-secondary;
 
 		img {
 			width: 1.1em;
@@ -512,7 +525,6 @@ body {
 
 .contact-page {
 	min-height: 100vh;
-
 
 	#gotcha {
 		display: none;
@@ -531,20 +543,20 @@ body {
 
 			input {
 				background-color: #fff;
-				border: 2px solid rgb(220, 228, 236);
+				border: none;
 				padding: 1.5em .7em;
 				@include border-radius(0px);
 			}
 
 			textarea {
 				width: 100%;
-				border: 2px solid rgb(220, 228, 236);
+				border: none;
 				padding: .7em;
 			}
 
 			.btn {
-				@include border-radius(0px);
-				padding: .7em 1.3em;
+				@include border-radius(2px);
+				padding: .5em 2em;
 			}
 		}
 		p {
@@ -580,7 +592,7 @@ body {
 	}
 
 	.modal-header {
-		background-color: $color-dark-2;
+		background-color: #F5E2CD;
 		padding: .7em;
 		border:none;
 
@@ -597,7 +609,7 @@ body {
 	}
 
 	.modal-body {
-		background-color: $color-dark;
+		background-color: #F5E2CD;
 
 		.img-container {
 			//-webkit-box-shadow: -5px 5px 0px 0px rgba(69,76,86,1);
@@ -619,8 +631,9 @@ body {
 				li {
 					&.key {
 						text-transform: uppercase;
-						color: $color-grey;
+						color: $color-secondary;
 						margin-bottom: .3em;
+						font-weight: 600;
 					}
 
 					&.value {
@@ -628,14 +641,14 @@ body {
 						color: rgba($color-grey, .8);
 
 						span {
-							border: 1px solid $color-dark-2;
+							border: 1px solid $color-secondary;
 							padding: .3em .7em;
 							display: inline-block;
 							margin-bottom: .3em;
 						}
 
 						a {
-							color: $color-orange;
+							color: $color-primary;
 						}
 					}
 				}
