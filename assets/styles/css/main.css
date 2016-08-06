@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import "https://fonts.googleapis.com/css?family=Montserrat:400,700";
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -2474,7 +2474,7 @@ body {
   background-image: linear-gradient(to right, #efe2d1 0%, #f5bb87 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEFE2D1', endColorstr='#FFF5BB87', GradientType=1);
-  font-family: "Lato", sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
 
 .wrapper {
   background: url("../../images/texture.png") repeat fixed; }
@@ -2484,7 +2484,7 @@ body {
     width: 1270px; } }
 
 .sidebar {
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.4); }
   @media screen and (min-width: 1200px) {
     .sidebar {
       position: fixed;
@@ -2509,7 +2509,7 @@ body {
       margin: 0;
       color: #f48081;
       font-size: 2em;
-      font-weight: 600; }
+      font-weight: 700; }
     .sidebar .title h2 {
       font-size: 1.1em;
       margin-top: .2em;
@@ -2524,7 +2524,7 @@ body {
         display: inline-block;
         background-color: rgba(255, 255, 255, 0.1); }
         .sidebar .title ul li:hover {
-          background-color: rgba(255, 255, 255, 0.3); }
+          background-color: rgba(255, 255, 255, 0.4); }
         .sidebar .title ul li a img {
           width: 27px;
           opacity: .8;
@@ -2547,22 +2547,22 @@ body {
             background-color: #f48081;
             color: #FFFFFF; }
   .sidebar .content {
-    border-top: 1px solid #f48081;
-    border-bottom: 1px solid #f48081;
+    border-top: 2px solid #f48081;
+    border-bottom: 2px solid #f48081;
     padding-bottom: .5em;
-    padding-top: .5em; }
+    padding-top: 1em; }
     .sidebar .content p {
-      color: #1e1e1e; }
+      color: #635860; }
   .sidebar .skillset h2 {
     font-size: 1.3em;
     text-transform: uppercase;
     color: #008e9c;
-    font-weight: 600; }
+    font-weight: 700; }
   .sidebar .skillset ul {
     padding: 0;
     list-style-type: none;
     margin: 0;
-    color: #1e1e1e; }
+    color: #635860; }
     .sidebar .skillset ul li {
       padding: .4em 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -2580,7 +2580,7 @@ body {
 
 .header {
   margin-bottom: 1em;
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.4); }
   .header nav ul {
     list-style-type: none;
     padding: 0;
@@ -2596,7 +2596,7 @@ body {
         display: block;
         text-transform: uppercase;
         font-weight: 400;
-        color: #1e1e1e;
+        color: #635860;
         -o-transition: .1s;
         -ms-transition: .1s;
         -moz-transition: .1s;
@@ -2609,7 +2609,7 @@ body {
           color: #fff; }
 
 .main {
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.4); }
   .main h2 {
     font-size: 1.5em;
     text-transform: uppercase;
@@ -2631,9 +2631,9 @@ body {
     margin: 0 0 .5em 0;
     color: #008e9c;
     font-size: 1.8em;
-    font-weight: 600; }
+    font-weight: 700; }
   .intro .job-element {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     text-align: left;
     padding: 1em;
     margin-bottom: 1em; }
@@ -2642,7 +2642,7 @@ body {
       font-weight: 400;
       color: #008e9c; }
     .intro .job-element .where h3 {
-      color: #1e1e1e;
+      color: #635860;
       margin: 0; }
       .intro .job-element .where h3 small {
         display: block;
@@ -2656,12 +2656,12 @@ body {
 
 .portfolio {
   padding: 1em 1em 0 1em;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   margin-top: 10px; }
   .portfolio h2 {
     margin: 0;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.5em;
     margin-bottom: .5em;
     color: #008e9c; }
@@ -2786,14 +2786,13 @@ body {
 
 .testimonials {
   padding: 1em 1em 0 1em;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   margin-top: 10px; }
   .testimonials h2 {
-    margin: 0;
+    margin: 0 0 .5em 0;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.5em;
-    margin-bottom: .5em;
     color: #008e9c; }
   .testimonials blockquote {
     padding: 1em;
@@ -2801,7 +2800,8 @@ body {
     font-size: 1.05em;
     border: none;
     line-height: 1.7em;
-    background-color: rgba(255, 255, 255, 0.3); }
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #635860; }
     .testimonials blockquote span {
       margin-top: 1em;
       display: block;
@@ -2809,11 +2809,11 @@ body {
       color: #008e9c; }
 
 .page {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 1em; }
   .page h2 {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.5em;
     margin-bottom: .5em;
     margin-top: 0;
@@ -2907,7 +2907,7 @@ body {
           text-transform: uppercase;
           color: #008e9c;
           margin-bottom: .3em;
-          font-weight: 600; }
+          font-weight: 700; }
         .modal .modal-body .desc ul li.value {
           font-size: 1.1em;
           color: rgba(0, 0, 0, 0.8); }
